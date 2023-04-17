@@ -13,10 +13,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kawe.belajarrest.entity.Employee;
-import com.kawe.belajarrest.services.EmployeeServiceImpl;
+import com.kawe.belajarrest.services.Employee.EmployeeServiceImpl;
+
+import lombok.RequiredArgsConstructor;
 
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/v1")
 public class EmployeeController {
     
@@ -29,14 +32,14 @@ public class EmployeeController {
 
     @GetMapping("/employees")
     public List<Employee> findAll(){
-
+        System.out.println("disini");
         return employee.findAll();
 
     }
 
     @GetMapping("/employee/{employeeID}")
     public Employee FinByID(@PathVariable int employeeID){
-
+        
         Employee theEmployee = employee.findByID(employeeID);
 
         if (theEmployee == null) {

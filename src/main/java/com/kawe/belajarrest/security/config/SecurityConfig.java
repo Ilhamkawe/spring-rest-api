@@ -28,7 +28,7 @@ public class SecurityConfig {
         .csrf()
         .disable() //? menontaktifkan keamanan scrf 
         .authorizeHttpRequests()
-        .requestMatchers("/api/v1/auth/**", "asdasd")
+        .requestMatchers("/api/v1/auth/**")
         .permitAll()
         .anyRequest()
         .authenticated()
