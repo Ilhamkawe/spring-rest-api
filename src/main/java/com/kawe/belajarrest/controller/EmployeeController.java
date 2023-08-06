@@ -32,7 +32,6 @@ public class EmployeeController {
 
     @GetMapping("/employees")
     public List<Employee> findAll(){
-        System.out.println("disini");
         return employee.findAll();
 
     }

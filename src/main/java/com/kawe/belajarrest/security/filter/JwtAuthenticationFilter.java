@@ -54,7 +54,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                     //* ekstrak username  
                     username = jwtService.ExtractUsername(jwtToken);
 
-
                     System.out.println("test");
                 }
             
@@ -77,7 +76,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                             //* set token ke security context holder
                             SecurityContextHolder.getContext().setAuthentication(authToken);
                         }
-                        
                     }
                     filterChain.doFilter(request, response);
             }

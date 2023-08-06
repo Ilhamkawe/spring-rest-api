@@ -28,7 +28,7 @@ public class AuthenticationService {
         .username(request.username)
         .password(passwordEncoder.encode(request.password))
         .no_telp(request.noTelp)
-        .role(Role.ADMIN)
+        .role(Role.valueOf(request.Role))
         .domisili(request.domisili)
         .build();
 
